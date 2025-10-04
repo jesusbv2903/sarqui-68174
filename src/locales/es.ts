@@ -7,18 +7,18 @@ export const es = {
     login: "Iniciar Sesión"
   },
   hero: {
-    title: "SERQUI: Conectamos Experiencias",
+    title: "SARQUI: Conectamos Experiencias",
     subtitle: "Plataforma de promoción turística",
     description: "Ayudamos a empresas y agencias a promocionar sus Full Days en los destinos más espectaculares de Venezuela.",
     cta: "Conocer Más"
   },
   home: {
     welcome: {
-      title: "¿Qué es SERQUI?",
-      description: "SERQUI es la plataforma líder que conecta empresas y agencias de viajes con viajeros apasionados por conocer Venezuela. Promociona tus Full Days a destinos icónicos como Chichiriviche, Canaima y Mérida, llegando a miles de turistas que buscan experiencias auténticas."
+      title: "¿Qué es SARQUI?",
+      description: "SARQUI es la plataforma líder que conecta empresas y agencias de viajes con viajeros apasionados por conocer Venezuela. Promociona tus Full Days a destinos icónicos como Chichiriviche, Canaima y Mérida, llegando a miles de turistas que buscan experiencias auténticas."
     },
     benefits: {
-      subtitle: "Beneficios de SERQUI",
+      subtitle: "Beneficios de SARQUI",
       title: "¿Por qué promocionar con nosotros?",
       visibility: {
         title: "Mayor Visibilidad",
@@ -35,7 +35,7 @@ export const es = {
     },
     cta: {
       title: "¿Listo para Impulsar tu Negocio?",
-      description: "Únete a SERQUI y comienza a promocionar tus Full Days ante miles de viajeros.",
+      description: "Únete a SARQUI y comienza a promocionar tus Full Days ante miles de viajeros.",
       cta: "Contáctanos"
     }
   },
@@ -68,10 +68,33 @@ export const es = {
   },
   about: {
     title: "Sobre Nosotros",
-    subtitle: "Conoce SERQUI"
+    subtitle: "Conoce SARQUI",
+    mission: {
+      title: "Nuestra Misión",
+      description: "En SARQUI, conectamos a las mejores agencias turísticas de Venezuela con viajeros apasionados que buscan experiencias auténticas. Desde la vibrante costa caribeña de Chichiriviche hasta las majestuosas alturas de Mérida y la legendaria Canaima, facilitamos que los turistas descubran la belleza incomparable de Venezuela."
+    },
+    story: {
+      title: "Nuestra Historia",
+      description: "SARQUI nació de la pasión por mostrar al mundo las maravillas naturales de Venezuela. Trabajamos con agencias certificadas que ofrecen Full Days completos desde Caracas - Plaza Venezuela, garantizando experiencias seguras, cómodas e inolvidables que incluyen transporte ida y vuelta, alimentación y todas las actividades."
+    },
+    values: {
+      title: "Nuestros Valores",
+      quality: {
+        title: "Calidad Garantizada",
+        description: "Solo trabajamos con agencias certificadas que cumplen nuestros estándares de excelencia."
+      },
+      transparency: {
+        title: "Transparencia Total",
+        description: "Información clara sobre precios, servicios incluidos y términos de cada experiencia."
+      },
+      passion: {
+        title: "Pasión por Venezuela",
+        description: "Amamos nuestro país y queremos que cada viajero descubra su belleza única."
+      }
+    }
   },
   footer: {
-    description: "SERQUI - Plataforma líder de promoción turística en Venezuela. Conectamos agencias con viajeros.",
+    description: "SARQUI - Plataforma líder de promoción turística en Venezuela. Conectamos agencias con viajeros.",
     quickLinks: "Enlaces Rápidos",
     contact: "Contacto",
     phone: "Teléfono",
