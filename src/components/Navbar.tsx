@@ -1,16 +1,18 @@
 
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 import ThemeToggle from "./ThemeToggle";
 import LanguageSelector from "./LanguageSelector";
 import BrandLogo from "./BrandLogo";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useAuth } from "@/contexts/AuthContext";
 
 export default function Navbar() {
   const { t } = useLanguage();
+  const { user, signOut } = useAuth();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   
@@ -50,9 +52,26 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center space-x-2">
           <ThemeToggle />
-          <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-6 py-2.5 font-medium">
-            <Link to="/login">{t.nav.login}</Link>
-          </Button>
+          {user ? (
+            <>
+              <Button asChild variant="ghost" size="icon" className="rounded-full">
+                <Link to="/profile">
+                  <User className="h-5 w-5" />
+                </Link>
+              </Button>
+              <Button 
+                onClick={() => signOut()}
+                variant="outline" 
+                className="rounded-full px-6 py-2.5 font-medium"
+              >
+                {t.nav.logout}
+              </Button>
+            </>
+          ) : (
+            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-6 py-2.5 font-medium">
+              <Link to="/auth">{t.nav.login}</Link>
+            </Button>
+          )}
         </div>
 
         {/* Mobile Navigation */}
@@ -84,11 +103,32 @@ export default function Navbar() {
               </ul>
             </div>
             
-            <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-6 py-2.5 font-medium mt-6">
-              <Link to="/login" onClick={() => setMobileMenuOpen(false)}>
-                {t.nav.login}
-              </Link>
-            </Button>
+            {user ? (
+              <div className="space-y-3 mt-6">
+                <Button asChild className="w-full" variant="outline">
+                  <Link to="/profile" onClick={() => setMobileMenuOpen(false)}>
+                    <User className="h-4 w-4 mr-2" />
+                    {t.nav.profile}
+                  </Link>
+                </Button>
+                <Button 
+                  onClick={() => {
+                    signOut();
+                    setMobileMenuOpen(false);
+                  }}
+                  className="w-full"
+                  variant="outline"
+                >
+                  {t.nav.logout}
+                </Button>
+              </div>
+            ) : (
+              <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-6 py-2.5 font-medium mt-6">
+                <Link to="/auth" onClick={() => setMobileMenuOpen(false)}>
+                  {t.nav.login}
+                </Link>
+              </Button>
+            )}
           </div>
         </div>
       </div>
