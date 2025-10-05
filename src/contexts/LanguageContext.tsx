@@ -4,7 +4,7 @@ import { en } from '../locales/en';
 import { it } from '../locales/it';
 import { es } from '../locales/es';
 
-type Translations = typeof en;
+type Translations = typeof es;
 
 interface LanguageContextType {
   language: string;
